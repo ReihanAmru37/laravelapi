@@ -31,3 +31,4 @@ class CreateProgramsTable extends Migration
         Schema::dropIfExists('programs');
     }
 }
+

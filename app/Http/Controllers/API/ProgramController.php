@@ -13,7 +13,7 @@ class ProgramController extends Controller
     public function index()
     {
         $data = Program::latest()->get();
-        return response()->json([ProgramResource::collection($data), 'Programs fetched.'
+            return response()->json([ProgramResource::collection($data), 'Programs fetched.'
     ]);
 }
 
@@ -33,7 +33,7 @@ class ProgramController extends Controller
             'desc' => $request->desc
         ]);
         
-        return response()->json(['Program created successfully.', new ProgramResource($program)
+            return response()->json(['Program created successfully.', new ProgramResource($program)
     ]);
 }
     public function show($id)
@@ -43,7 +43,7 @@ class ProgramController extends Controller
             return response()->json('Data not found', 404);
         }
         
-        return response()->json([new ProgramResource($program)]);
+            return response()->json([new ProgramResource($program)]);
     }
     
     public function update(Request $request, Program $program)
@@ -61,12 +61,12 @@ class ProgramController extends Controller
         $program->desc = $request->desc;
         $program->save();
         
-        return response()->json(['Program updated successfully.', new ProgramResource($program)]);
+            return response()->json(['Program updated successfully.', new ProgramResource($program)]);
     }
     
     public function destroy(Program $program)
     {
         $program->delete();
-        return response()->json('Program deleted successfully');
+            return response()->json('Program deleted successfully');
     }
 }

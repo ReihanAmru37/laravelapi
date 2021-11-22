@@ -23,3 +23,4 @@ class ProgramResource extends JsonResource
         ];
     }
 }
+
