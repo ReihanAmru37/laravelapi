@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +29,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         Route::get('/profile', function(Request $request) {
             return auth()->user();
         });
-
-        Route::resource('programs', ProgramController::class);
 
 // API route for logout user
     Route::post('/logout', [AuthController::class, 'logout']);
